@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi gắm - 12A3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 md:p-8 flex flex-col min-h-screen">
+
+    <nav class="flex justify-between items-center mb-12">
+        <a href="index.html" class="bg-orange-clay neo-brutalism px-6 py-2 font-black text-2xl uppercase italic text-white hover:bg-black">12A3!</a>
+        <div class="hidden md:flex gap-4">
+            <a href="thanh-vien.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage">Thành viên</a>
+            <a href="thay-co.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage">Thầy cô</a>
+            <a href="thu-vien.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage">Kỷ niệm</a>
+            <a href="loi-nhan.html" class="bg-sage text-white neo-brutalism px-4 py-2 font-bold">Gửi gắm</a>
+        </div>
+    </nav>
+
+    <div class="flex-grow flex items-center justify-center">
+        <div class="bg-white neo-brutalism p-8 max-w-2xl w-full">
+            <h1 class="text-4xl font-black uppercase mb-2">Hòm Thư Bí Mật 🤫</h1>
+            <p class="font-bold text-gray-600 mb-8">Hãy để lại một vài lời nhắn cho thanh xuân của chúng ta.</p>
+            
+            <form id="message-form" class="flex flex-col gap-6">
+                <div>
+                    <label class="font-black text-xl uppercase block mb-2">Tên của bạn (hoặc ẩn danh)</label>
+                    <input type="text" id="sender-name" required class="w-full neo-brutalism p-4 text-lg outline-none focus:bg-yellow-100" placeholder="VD: Cô gái bàn cuối...">
+                </div>
+                <div>
+                    <label class="font-black text-xl uppercase block mb-2">Lời muốn nói</label>
+                    <textarea id="sender-message" required rows="5" class="w-full neo-brutalism p-4 text-lg outline-none focus:bg-yellow-100" placeholder="Thực ra mình rất thích..."></textarea>
+                </div>
+                <button type="submit" class="bg-black text-white neo-brutalism px-8 py-4 font-black text-2xl uppercase hover:bg-orange-clay transition-colors mt-4">Gửi Đi 🚀</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

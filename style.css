@@ -1,0 +1,27 @@
+body { 
+    font-family: 'Lexend', sans-serif; 
+    background-color: #F9F9F7;
+    cursor: url('https://api.iconify.design/fluent-emoji:fire.svg'), auto;
+}
+.neo-brutalism {
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    transition: all 0.2s ease;
+}
+.neo-brutalism:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+}
+.bg-sage { background-color: #87A96B; }
+.bg-orange-clay { background-color: #D27D2D; }
+.bg-yellow-bright { background-color: #FDE047; }
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

@@ -1,8 +1,8 @@
 const k57Data = {
     // 1. Danh sách thành viên
     thanhVien: [
-        { ten: "Trang Vân Thy", bietDanh: "Bóng", anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Thy", tag: "🐱 CAT LOVER" },
-        { ten: "Nguyễn Văn A", bietDanh: "Trùm ngủ gật", anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=A", tag: "💤 SLEEPY" },
+        { ten: "Trang Vân Thy", bietDanh: "Bóng", anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Thy", tag: "GIRL ♀️" },
+        { ten: "Nguyễn Hữu Tuấn Cường", bietDanh: "cn", anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=A", tag: "BOY ♂️" },
         // Copy dòng trên và dán xuống dưới để thêm thành viên mới
     ],
 

@@ -25,3 +25,10 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+/* style.css */
+@media (max-width: 640px) {
+    h1 { font-size: 3rem !important; } /* Chữ tiêu đề nhỏ lại trên mobile */
+    .marquee { animation: marquee 10s linear infinite; } /* Chạy nhanh hơn một chút trên màn hình ngắn */
+    .neo-brutalism { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); } /* Đổ bóng mỏng hơn cho mobile đỡ rối */
+    .neo-brutalism:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px 0px rgba(0,0,0,1); }
+}

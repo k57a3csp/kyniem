@@ -1,6 +1,21 @@
-// Render Thành viên
+// main.js
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+        menu.classList.toggle('hidden');
+    }
+}
+
+// Tự động đóng menu khi xoay ngang màn hình hoặc phóng to trình duyệt (tùy chọn)
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) { // 768px là mốc md của Tailwind
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.add('hidden');
+    }
+});
 const membersGrid = document.getElementById('members-grid');
 if (membersGrid) {
+    membersGrid.className = "bg-white neo-brutalism p-4 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
     k57Data.thanhVien.forEach(member => {
         membersGrid.innerHTML += `
             <div class="group relative cursor-pointer bg-white neo-brutalism p-4">
@@ -18,6 +33,7 @@ if (membersGrid) {
 // Render Thầy cô
 const teachersGrid = document.getElementById('teachers-grid');
 if (teachersGrid) {
+    teachersGrid.className = "grid grid-cols-1 md:grid-cols-2 gap-6 mb-16";
     k57Data.thayCo.forEach(teacher => {
         teachersGrid.innerHTML += `
             <div class="bg-yellow-bright p-6 neo-brutalism flex items-center gap-4">

@@ -93,3 +93,116 @@ if (messageForm) {
         });
     });
 }
+// Xử lý Cỗ Máy Thời Gian
+const timeForm = document.getElementById('time-capsule-form');
+if (timeForm) {
+    timeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = {
+            name: document.getElementById('future-name').value,
+            email: document.getElementById('future-email').value,
+            message: document.getElementById('future-message').value
+        };
+
+        fetch('https://sheetdb.io/api/v1/3ofh56qs9h5tg', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(() => {
+            alert("Lá thư đã được lưu vào Google Sheets!");
+            timeForm.reset();
+        });
+    });
+}
+
+const URL_BINH_CHON = 'https://script.google.com/macros/s/AKfycbyQ0vQxf4ahavjTtyZIEHv0_G6E-9IkkW1SjFD7AXvWGzyORcdokCTSuOYqvw_BSxhg/exec';
+
+// 1. Đổ dữ liệu thành viên vào các Dropdown
+const voteSelects = document.querySelectorAll('#voting-form select');
+if (voteSelects.length > 0 && typeof k57Data !== 'undefined') {
+    voteSelects.forEach(select => {
+        k57Data.thanhVien.forEach(member => {
+            const opt = document.createElement('option');
+            opt.value = member.ten;
+            opt.textContent = member.ten;
+            select.appendChild(opt);
+        });
+    });
+}
+
+// 2. Xử lý khi nhấn Vote
+const votingForm = document.getElementById('voting-form');
+if (votingForm) {
+    votingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('btn-submit');
+        btn.disabled = true;
+        btn.innerText = "Đang ghi nhận...";
+
+        const data = {
+    nguGat: document.getElementById('vote-ngu-gat').value,
+    vanNghe: document.getElementById('vote-van-nghe').value,
+    hocThan: document.getElementById('vote-hoc-than').value // Đã thêm cột 3
+};
+
+        try {
+            // Gửi dữ liệu lên Google Sheets
+            await fetch(URL_BINH_CHON, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(data)
+            });
+
+            // Hiện vùng kết quả và vẽ biểu đồ
+            document.getElementById('vote-box').classList.add('hidden');
+            document.getElementById('result-box').classList.remove('hidden');
+            
+            // Lấy dữ liệu mới nhất để vẽ biểu đồ
+            setTimeout(async () => {
+                const res = await fetch(URL_BINH_CHON);
+                const votes = await res.json();
+                drawResults(votes);
+            }, 1000);
+
+        } catch (err) {
+            alert("Lỗi rồi! Bạn hãy kiểm tra lại URL App Script.");
+            btn.disabled = false;
+        }
+    });
+}
+
+// 3. Hàm vẽ biểu đồ
+function drawResults(votes) {
+    // Thêm 'hocThan' vào danh sách hạng mục
+    const categories = ['nguGat', 'vanNghe', 'hocThan'];
+    const colors = ['#FCD34D', '#F472B6', '#60A5FA']; // Vàng, Hồng, Xanh dương
+
+    categories.forEach((cat, index) => {
+        const counts = {};
+        votes.forEach(v => {
+            if(v[cat]) counts[v[cat]] = (counts[v[cat]] || 0) + 1;
+        });
+
+        // Tạo ID canvas tương ứng: chart-ngu-gat, chart-van-nghe, chart-hoc-than
+        const canvasId = `chart-${cat.replace(/([A-Z])/g, "-$1").toLowerCase()}`;
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(counts),
+                datasets: [{
+                    label: `Số phiếu: ${cat === 'nguGat' ? 'Trùm ngủ gật' : cat === 'vanNghe' ? 'Văn nghệ' : 'Học thần'}`,
+                    data: Object.values(counts),
+                    backgroundColor: colors[index],
+                    borderColor: '#000',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: { x: { beginAtZero: true } }
+            }
+        });
+    });
+}

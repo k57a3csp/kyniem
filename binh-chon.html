@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bình Chọn A3 - 12A3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/893888180439367833/1495971421862498304/Untitled_design.png?ex=69e82f74&is=69e6ddf4&hm=480975bf8b17d85809427ac322a3c49207f16d8f64094a08606eb31d9912d078&=&format=webp&quality=lossless&width=1014&height=886">
+</head>
+<body class="bg-blue-50 p-4 md:p-8">
+    <div class="max-w-2xl mx-auto">
+        
+        <nav class="flex justify-between items-center mb-10">
+            <a href="index.html" class="bg-white border-4 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </a>
+            <div class="bg-orange-clay border-4 border-black px-6 py-1 font-black text-white italic text-xl uppercase">12A3!</div>
+        </nav>
+
+        <header class="mb-8">
+            <h1 class="text-5xl font-black uppercase leading-none">A3 Awards 🏆</h1>
+            <p class="font-bold mt-2 italic text-gray-600">Bình chọn danh hiệu lớp...</p>
+        </header>
+
+        </div>
+</body>
+<body class="bg-blue-50 p-4">
+    <div class="max-w-2xl mx-auto">
+
+        <div id="vote-box" class="bg-white neo-brutalism p-6 border-4 border-black">
+            <form id="voting-form" class="space-y-6">
+                <div>
+                    <label class="block font-black mb-2 uppercase text-sm">😴 Trùm ngủ gật</label>
+                    <select id="vote-ngu-gat" required class="w-full border-4 border-black p-3 font-bold appearance-none bg-white outline-none focus:bg-yellow-100">
+                        <option value="">-- Chọn thành viên --</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black mb-2 uppercase text-sm">💃 Chiến thần văn nghệ</label>
+                    <select id="vote-van-nghe" required class="w-full border-4 border-black p-3 font-bold appearance-none bg-white outline-none focus:bg-pink-100">
+                        <option value="">-- Chọn thành viên --</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black mb-2 uppercase text-sm">📚 Học thần A3</label>
+                    <select id="vote-hoc-than" required class="w-full border-4 border-black p-3 font-bold appearance-none bg-white outline-none focus:bg-blue-100">
+                        <option value="">-- Chọn thành viên --</option>
+                    </select>
+</div>
+
+
+                <button type="submit" id="btn-submit" class="w-full bg-black text-white font-black py-4 uppercase neo-brutalism hover:bg-blue-400 transition-all">Gửi bình chọn</button>
+            </form>
+        </div>
+
+        <div id="result-box" class="hidden mt-8 bg-white neo-brutalism p-6 border-4 border-black">
+            <h2 class="text-2xl font-black uppercase mb-6">Kết quả bình chọn 📊</h2>
+            <div class="space-y-8">
+                <canvas id="chart-ngu-gat" height="250"></canvas>
+                <canvas id="chart-van-nghe" height="250"></canvas>
+                <canvas id="chart-hoc-than" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center py-12 border-t-4 border-black">
+
+        <p class="font-black text-xl uppercase">Thiết kế bởi 12A3 - Niên khóa 2023-2026</p>
+
+        <p class="font-bold opacity-60 mt-2 italic">Dành riêng cho những người bạn mệnh Hỏa đầy nhiệt huyết.</p>
+        <p>©️Vuong Dinh Tuong An 2026</p>
+
+    </footer>
+    <script src="data.js"></script> <script src="main.js"></script>
+</body>
+</html>

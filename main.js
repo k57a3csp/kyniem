@@ -23,7 +23,7 @@ if (membersGrid) {
                     <img src="${member.anh}" alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
                 </div>
                 <h3 class="font-black text-xl uppercase">${member.ten}</h3>
-                <p class="font-bold text-sm opacity-70">"${member.bietDanh}" • 12A3</p>
+                <p class="font-bold text-sm opacity-70">"${member.bietDanh}" • ${member.dob} • 12A3</p>
                 <div class="absolute top-2 right-2 bg-white border-2 border-black px-2 py-1 text-[10px] font-black">${member.tag}</div>
             </div>
         `;
@@ -62,6 +62,26 @@ if (galleryGrid) {
     // Render Video
     k57Data.thuVien.video.forEach(videoLink => {
         galleryGrid.innerHTML += `
+            <div class="neo-brutalism overflow-hidden aspect-video col-span-1 md:col-span-2">
+                <iframe class="w-full h-full" src="${videoLink}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        `;
+    });
+}
+
+const gallerytrollGrid = document.getElementById('gallerytroll-grid');
+if (gallerytrollGrid) {
+    // Render Ảnh
+    k57Data.anhDim.anh.forEach(anhLink => {
+        gallerytrollGrid.innerHTML += `
+            <div class="neo-brutalism overflow-hidden aspect-square">
+                <img src="${anhLink}" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+        `;
+    });
+    // Render Video
+    k57Data.anhDim.video.forEach(videoLink => {
+        gallerytrollGrid.innerHTML += `
             <div class="neo-brutalism overflow-hidden aspect-video col-span-1 md:col-span-2">
                 <iframe class="w-full h-full" src="${videoLink}" frameborder="0" allowfullscreen></iframe>
             </div>

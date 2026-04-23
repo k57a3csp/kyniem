@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12A3 - Máy Tạo Vũ Trụ Thành Viên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            font-family: 'Lexend', sans-serif; 
+            background-color: #F4F0EA; 
+            background-image: radial-gradient(#00000033 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+        .neo-brutalism { border: 3px solid #000; box-shadow: 6px 6px 0px 0px rgba(0,0,0,1); transition: all 0.2s; }
+        .neo-button { border: 3px solid #000; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); transition: all 0.15s ease; cursor: pointer; }
+        .neo-button:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px 0px rgba(0,0,0,1); }
+        .neo-input { border: 3px solid #000; outline: none; transition: all 0.2s; }
+        .loading-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.8); z-index: 100; align-items: center; justify-content: center; font-weight: 900; }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+    <div id="loading" class="loading-overlay italic text-2xl">ĐANG XỬ LÝ DỮ LIỆU...</div>
+
+    <nav class="flex flex-wrap justify-between items-center mb-8 gap-4 bg-white neo-brutalism p-4 rounded-2xl">
+        <a href="index.html" class="bg-orange-clay neo-brutalism px-6 py-2 font-black text-2xl uppercase italic text-white hover:bg-black transition-colors block">
+        12A3!
+    </a>
+        <div class="hidden md:flex gap-4">
+        <a href="thanh-vien.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Thành viên</a>
+        <a href="thay-co.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Thầy cô</a>
+        <a href="thu-vien.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Thư Viện Ảnh</a>
+        <a href="anh-dim.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Kho Ảnh Dìm</a>
+        <a href="loi-nhan.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Secret Box</a>
+        <a href="profile-ao.html" class="bg-white neo-brutalism px-4 py-2 font-bold hover:bg-sage text-black">Lập Profile Ảo</a>
+    </div>
+
+    <button onclick="toggleMobileMenu()" class="md:hidden bg-white neo-brutalism p-2 border-2 border-black">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 z-50 bg-white neo-brutalism mt-2 p-4 flex flex-col gap-4 shadow-2xl">
+        <a href="thanh-vien.html" class="font-black uppercase border-b-2 border-black pb-2 text-black">Thành viên</a>
+        <a href="thay-co.html" class="font-black uppercase border-b-2 border-black pb-2 text-black">Thầy cô</a>
+        <a href="thu-vien.html" class="font-black uppercase border-b-2 border-black pb-2 text-black">Thư Viện Ảnh</a>
+        <a href="anh-dim.html" class="font-black uppercase border-b-2 border-black pb-2 text-black">Kho Ảnh Dìm</a>
+        <a href="loi-nhan.html" class="font-black uppercase border-b-2 border-black pb-2 text-black">Secret Box</a>
+        <a href="profile-ao.html" class="font-black uppercase text-black">Lập Profile Ảo</a>
+    </div>
+    </nav>
+
+    <section class="mb-12 bg-[#B5EAD7] neo-brutalism p-6 rounded-2xl">
+        <div class="flex items-center gap-4 mb-6">
+            <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black">🛠 PHÒNG CUSTOM PROFILE</h2>
+            <div class="h-1.5 bg-black flex-grow rounded-full opacity-30"></div>
+        </div>
+        <div class="flex justify-between items-center mb-6">
+            <p class="font-bold text-sm text-gray-800">✨ Tùy chỉnh chi tiết từ ánh mắt đến nụ cười! Bí ý tưởng? Bấm Xúc xắc nhé 👉</p>
+            <button onclick="rollDice()" class="neo-button bg-yellow-400 text-black px-6 py-2 font-black text-lg rounded-xl uppercase hover:bg-yellow-300 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                🎲 Xúc Xắc
+            </button>
+        </div>
+        <div class="flex flex-col xl:flex-row gap-8">
+            <div class="flex-1 bg-white neo-brutalism p-6 rounded-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="col-span-full">
+                    <h3 class="font-black text-md uppercase text-[#D27D2D] mb-2">📄 Thông tin</h3>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase italic text-blue-600">Chọn tên bạn</label>
+                    <select id="select-name" class="w-full neo-input p-3 rounded-lg font-bold bg-[#F0F8FF]">
+                        <option value="">Đang tải...</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase italic">Biệt danh</label>
+                    <input type="text" id="inputNick" oninput="updatePreview()" class="w-full neo-input p-3 rounded-lg font-bold" placeholder="VD: Cu Tèo...">
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase italic">Giới tính</label>
+                    <select id="inputGender" onchange="updatePreview()" class="w-full neo-input p-3 rounded-lg font-bold">
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                    </select>
+                </div>
+                <div class="col-span-full mt-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <h3 class="font-black text-md uppercase text-[#D27D2D] mb-2">🎭 Khuôn mặt & Biểu cảm</h3>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Màu da</label>
+                    <select id="inputSkin" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="f2d3b1">Trắng kem</option>
+                        <option value="ffdfbf">Trắng hồng rạng rỡ</option>
+                        <option value="ecbcb4">Hồng phấn baby</option>
+                        <option value="c58c85">Ngăm bánh mật</option>
+                        <option value="a36b56">Nâu Caramel</option>
+                        <option value="694d3d">Đen Socola</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Ánh Mắt</label>
+                    <select id="inputEyes" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="variant02">Nhìn xung quanh</option>
+                        <option value="variant03">Mở to mắt</option>
+                        <option value="variant04">Hờ hững</option>
+                        <option value="variant05">Cười tít mắt</option>
+                        <option value="variant07">Trợn tròn ngơ ngác</option>
+                        <option value="variant10">Khó tin</option>
+                        <option value="variant12">Khó nói / Cạn lời</option>
+                        <option value="variant13">Cười tít mắt hơn </option>
+                        <option value="variant21">Nháy mắt</option>
+                        <option value="variant26">Mắt to rạng rỡ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Khuôn Miệng</label>
+                    <select id="inputMouth" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="variant01">Cười hở miệng</option>
+                        <option value="variant02">Cười mỉm</option>
+                        <option value="variant04">Nghi ngờ</option>
+                        <option value="variant08">Chu mỏ xì tin</option>
+                        <option value="variant09">Không biết nói gì</option>
+                        <option value="variant14">Há hốc ngạc nhiên (O.O)</option>
+                        <option value="variant22">Cười tự tin</option>
+                        <option value="variant24">Trái tim</option>
+                        <option value="variant28">Cười răng thỏ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Đặc điểm da</label>
+                    <select id="inputFeatures" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="0">Mặt láng mịn xài app</option>
+                        <option value="100">Có tàn nhang / Má hồng</option>
+                    </select>
+                </div>
+
+                <div class="col-span-full mt-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <h3 class="font-black text-md uppercase text-[#D27D2D] mb-2">✂️ Tiệm làm tóc</h3>
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block font-black text-sm mb-1 uppercase">Kiểu Tóc</label>
+                    <select id="inputHair" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <optgroup label="Dành cho Nam (Short)">
+                            <option value="short01">Undercut</option>
+                            <option value="short02">Cắt moi</option>
+                            <option value="short03">Tóc xoăn</option>
+                            <option value="short05">Tóc samurai</option>
+                            <option value="short06">Tóc anime</option>
+                            <option value="short11">Tóc vuốt ngược</option>
+                            <option value="short13">Tóc ông chú</option>
+                            <option value="short16">Tóc ngôi sao nhạc rock</option>
+                        </optgroup>
+                        <optgroup label="Dành cho Nữ (Long)">
+                            <option value="long01">Tóc dài có mái</option>
+                            <option value="long02">Tóc ngắn kiểu bé gái</option>
+                            <option value="long03">Tóc ngắn kiểu bé gái thêm cài hoa</option>
+                            <option value="long05">Tóc dài không mái </option>
+                            <option value="long15">Tóc cột hai bên</option>
+                            <option value="long16">Tóc đuôi sam</option>
+                            <option value="long19">Tóc cột đuôi ngựa</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Màu Tóc</label>
+                    <select id="inputHairColor" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="0e0e0e">Đen tuyền truyền thống</option>
+                        <option value="6a4e35">Nâu hạt dẻ ngoan hiền</option>
+                        <option value="d4a159">Vàng hoe tây tây</option>
+                        <option value="9c3c21">Đỏ rực cháy phố</option>
+                        <option value="e8e1e1">Bạch kim dân chơi</option>
+                        <option value="c4a2e5">Tím khói mộng mơ</option>
+                    </select>
+                </div>
+
+                <div class="col-span-full mt-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <h3 class="font-black text-md uppercase text-[#D27D2D] mb-2">💎 Phụ kiện</h3>
+                </div>
+                <div class="md:col-span-1">
+                    <label class="block font-black text-sm mb-1 uppercase">Kính Mắt</label>
+                    <select id="inputGlasses" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="none">Không đeo kính</option>
+                        <option value="variant01">Kính râm cực ngầu</option>
+                        <option value="variant02">Kính mọt sách</option>
+                        <option value="variant04">Kính tròn Nobita</option>
+                        <option value="variant05">Kính nửa viền tri thức</option>
+                    </select>
+                </div>
+                <div class="md:col-span-1">
+                    <label class="block font-black text-sm mb-1 uppercase">Khuyên Tai</label>
+                    <select id="inputEarrings" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="none">Không xỏ khuyên</option>
+                        <option value="variant01">Khuyên vòng trơn</option>
+                        <option value="variant02">Khuyên nụ nhỏ xíu</option>
+                        <option value="variant03">Khuyên vành tai</option>
+                    </select>
+                </div>
+
+                <div class="col-span-full mt-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <h3 class="font-black text-md uppercase text-[#D27D2D] mb-2">🖼️ Trang trí Khung</h3>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Khung Avatar</label>
+                    <select id="inputShape" class="w-full neo-input p-3 rounded-lg font-bold dice-target" onchange="updatePreview()">
+                        <option value="rounded-xl">Bo góc gọn gàng</option>
+                        <option value="rounded-full">Tròn xoe</option>
+                        <option value="rounded-none">Vuông vức</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-black text-sm mb-1 uppercase">Màu Nền Ảnh</label>
+                    <input type="color" id="inputBg" value="#FFB5E8" class="w-full h-12 neo-input p-1 rounded-lg cursor-pointer" onchange="updatePreview()">
+                </div>
+            </div>
+
+            <div class="w-full xl:w-1/4 bg-white neo-brutalism p-6 rounded-xl flex flex-col items-center justify-center">
+                <h3 class="font-black text-lg mb-4 uppercase text-center bg-black text-white px-3 py-1 rounded-md">Xem Trước</h3>
+                <div id="previewContainer" class="w-48 h-48 bg-white rounded-xl border-4 border-black mb-6 overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                    <img id="previewImg" src="" class="w-full h-full object-cover">
+                </div>
+                <button onclick="saveToSheet()" class="w-full neo-button bg-black text-white py-4 font-black text-lg rounded-xl uppercase hover:bg-[#D27D2D]">
+                    Gia nhập vũ trụ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="member-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8"></div>
+
+    <script src="data.js"></script>
+    <script>
+        // THAY URL CỦA BẠN VÀO ĐÂY
+        const SHEETDB_API = "https://sheetdb.io/api/v1/m4y4souj8fwpw"; 
+        
+        let cloudData = [];
+        function rollDice() {
+            const selects = document.querySelectorAll('.dice-target');
+            selects.forEach(select => {
+                const options = select.options;
+                if (options.length <= 1) return;
+                const randomIndex = Math.floor(Math.random() * options.length);
+                select.selectedIndex = randomIndex;
+            });
+            
+            // Random thêm màu nền
+            const randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            document.getElementById('inputBg').value = `#${randomColor}`;
+            
+            updatePreview();
+        }
+
+        // 1. Tải dữ liệu từ Sheet
+        async function fetchSheetData() {
+            toggleLoading(true);
+            try {
+                const res = await fetch(SHEETDB_API);
+                cloudData = await res.json();
+                renderGrid(cloudData);
+                updateDropdown();
+            } catch (e) { console.error("Lỗi tải dữ liệu", e); }
+            toggleLoading(false);
+        }
+
+        // 2. Cập nhật Dropdown (Loại bỏ người đã có tên trong cloudData)
+        function updateDropdown() {
+            const select = document.getElementById('select-name');
+            select.innerHTML = '<option value="">-- Chọn tên --</option>';
+            
+            const registeredNames = cloudData.map(item => item.name);
+            
+            k57Data.thanhVien.forEach(sv => {
+                if (!registeredNames.includes(sv.ten)) {
+                    const opt = document.createElement('option');
+                    opt.value = sv.ten;
+                    opt.textContent = sv.ten;
+                    select.appendChild(opt);
+                }
+            });
+        }
+
+        // 3. Lưu thông tin
+        async function saveToSheet() {
+            const name = document.getElementById('select-name').value;
+            const nick = document.getElementById('inputNick').value.trim();
+            if (!name || !nick) return alert("Vui lòng chọn tên và nhập biệt danh!");
+
+            toggleLoading(true);
+            const gender = document.getElementById('inputGender').value;
+            const payload = {
+                data: [{
+                    name: name,
+                    nickname: nick,
+                    gender: gender,
+                    avatar: document.getElementById('previewImg').src,
+                }]
+            };
+
+            await fetch(SHEETDB_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            await fetchSheetData();
+        }
+
+        // 4. Xóa thông tin (SheetDB tự dồn dòng)
+        async function deleteProfile(name) {
+            if (!confirm(`Xóa profile của ${name}?`)) return;
+            toggleLoading(true);
+            
+            await fetch(`${SHEETDB_API}/name/${encodeURIComponent(name)}`, {
+                method: 'DELETE'
+            });
+
+            await fetchSheetData();
+        }
+
+        // 5. Hiển thị Grid
+        function renderGrid(data) {
+            const grid = document.getElementById('member-grid');
+            grid.innerHTML = data.map(m => `
+                <div class="group relative ${m.cardbg} rounded-2xl p-4 neo-brutalism flex flex-col items-center text-center">
+                    <button onclick="deleteProfile('${m.name}')" class="absolute -top-2 -left-2 bg-red-500 text-white w-8 h-8 border-2 border-black font-black rounded-lg z-20 opacity-0 group-hover:opacity-100 transition-all">X</button>
+                    <div class="w-full aspect-square ${m.shape} border-3 border-black mb-4 overflow-hidden bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                        <img src="${m.avatar}" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-black text-[15px] uppercase truncate w-full">${m.name}</h3>
+                    <div class="bg-gray-100 border-2 border-black rounded-md px-2 py-0.5 font-bold text-[10px] mt-1 italic">@${m.nickname}</div>
+                </div>
+            `).join('');
+        }
+
+        // Logic phụ trợ
+        function updatePreview() {
+            const nick = document.getElementById('inputNick').value.trim() || 'Newbie';
+            const skin = document.getElementById('inputSkin').value;
+            const eyes = document.getElementById('inputEyes').value;
+            const mouth = document.getElementById('inputMouth').value;
+            const hair = document.getElementById('inputHair').value;
+            const hairColor = document.getElementById('inputHairColor').value;
+            const features = document.getElementById('inputFeatures').value;
+            
+            // Kính
+            const glassesInput = document.getElementById('inputGlasses').value;
+            const glassesProb = glassesInput === 'none' ? 0 : 100;
+            const glassesParam = glassesInput === 'none' ? '' : `&glasses=${glassesInput}`;
+
+            // Khuyên tai
+            const earringsInput = document.getElementById('inputEarrings').value;
+            const earringsProb = earringsInput === 'none' ? 0 : 100;
+            const earringsParam = earringsInput === 'none' ? '' : `&earrings=${earringsInput}`;
+
+
+            const bg = document.getElementById('inputBg').value.replace('#', ''); 
+            const shape = document.getElementById('inputShape').value;
+            
+            // Cập nhật URL (Không có quần áo, thêm thông số xác suất phụ kiện)
+            const previewUrl = `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(nick)}&skinColor=${skin}&eyes=${eyes}&mouth=${mouth}&hair=${hair}&hairColor=${hairColor}&glassesProbability=${glassesProb}${glassesParam}&earringsProbability=${earringsProb}${earringsParam}&featuresProbability=${features}&clothingProbability=0&backgroundColor=${bg}`;
+            
+            // Áp dụng lên giao diện Preview
+            document.getElementById('previewImg').src = previewUrl;
+            document.getElementById('previewContainer').style.backgroundColor = `#${bg}`;
+            
+            // Cập nhật Hình dáng khung
+            const container = document.getElementById('previewContainer');
+            container.className = `w-48 h-48 bg-white border-4 border-black mb-6 overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative transition-all duration-300 ${shape}`;
+            
+            // Cập nhật Màu Thẻ
+            const card = document.getElementById('previewCard');
+            card.className = `w-full xl:w-1/4 neo-brutalism p-6 rounded-xl flex flex-col items-center justify-center transition-colors duration-300 ${cardBg}`;
+        }
+
+        function display(data) {
+            grid.innerHTML = data.map(m => `
+                <div class="group relative ${m.cardBg || 'bg-white'} rounded-2xl p-4 neo-brutalism flex flex-col items-center text-center transition-colors duration-300 animate-fade-in">
+                    
+                    <div class="w-full aspect-square ${m.shape || 'rounded-xl'} border-3 border-black mb-4 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 bg-white">
+                        <img src="${m.avatar}" alt="Avatar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    </div>
+                    
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="font-black text-[17px] uppercase truncate w-full mb-1" title="${m.name}">${m.name}</h3>
+                        <div class="bg-gray-100 border-2 border-black rounded-md px-3 py-1 font-bold text-xs text-gray-700">
+                            @${m.nickname}
+                        </div>
+                    </div>
+
+                    <div class="absolute -top-3 -right-3 ${m.tagColor} border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase rotate-[12deg] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-full z-10 group-hover:rotate-0 group-hover:scale-110 transition-all">
+                        ${m.tag}
+                    </div>
+                    
+                </div>
+            `).join('');
+        }
+
+        function filterGender(g) {
+            if (g === 'all') {
+                display(members);
+            } else {
+                const filtered = members.filter(m => m.gender === g);
+                display(filtered);
+            }
+        }
+
+        function toggleLoading(show) { document.getElementById('loading').style.display = show ? 'flex' : 'none'; }
+
+        // Khởi tạo
+        fetchSheetData();
+        updatePreview();
+        filterGender('all');
+    </script>
+    
+</body>
+<footer class="text-center py-12 border-t-4 border-black">
+
+        <p class="font-black text-xl uppercase">Thiết kế bởi 12A3 - Niên khóa 2023-2026</p>
+
+        <p class="font-bold opacity-60 mt-2 italic">Dành riêng cho những người bạn mệnh Hỏa đầy nhiệt huyết.</p>
+        <p>©️Vuong Dinh Tuong An 2026</p>
+
+    </footer>
+</html>

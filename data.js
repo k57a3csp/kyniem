@@ -1,51 +1,51 @@
 const k57Data = {
     // 1. Danh sách thành viên
     thanhVien: [
-        { ten: "Vương Đình Tường An", bietDanh: "", tag: "BOY ♂️", anh: "images/an.jpg" },
-        { ten: "Đặng Việt Anh", bietDanh: "", tag: "BOY ♂️", anh: "images/vietanh.jpg" },
-        { ten: "NGUYỄN TÀI TIẾN ANH", bietDanh: "", tag: "BOY ♂️", anh: "images/tienanh.jpg" },
-        { ten: "Nguyễn Thị Lan Anh", bietDanh: "", tag: "GIRL ♀️", anh: "images/lananh.jpg" },
-        { ten: "Trần Ngọc Phương Anh", bietDanh: "", tag: "GIRL ♀️", anh: "images/phuonganh.jpg" },
-        { ten: "Vương Minh Anh", bietDanh: "", tag: "GIRL ♀️", anh: "images/minhanh.jpg" },
-        { ten: "Nguyễn Lê Đức Bình", bietDanh: "", tag: "BOY ♂️", anh: "images/binh.jpg" },
-        { ten: "Trần Bảo Minh Châu", bietDanh: "", tag: "GIRL ♀️", anh: "images/chau.jpg" },
-        { ten: "Nguyễn Hữu Tuấn Cường", bietDanh: "", tag: "BOY ♂️", anh: "images/cuong.jpg" },
-        { ten: "Nguyễn Cao Anh Đức", bietDanh: "", tag: "BOY ♂️", anh: "images/anhduc.jpg" },
-        { ten: "Nguyễn Việt Dũng", bietDanh: "", tag: "BOY ♂️", anh: "images/dung.jpg" },
-        { ten: "Nguyễn Đặng Thùy Dương", bietDanh: "", tag: "GIRL ♀️", anh: "images/thuyduong.jpg" },
-        { ten: "Nguyễn Tiến Dương", bietDanh: "", tag: "BOY ♂️", anh: "images/tienduong.jpg" },
-        { ten: "Phan Khánh Duy", bietDanh: "", tag: "BOY ♂️", anh: "images/duy.jpg" },
-        { ten: "Đinh Quang Hiếu", bietDanh: "", tag: "BOY ♂️", anh: "images/hieu.jpg" },
-        { ten: "Vũ Ngọc Hưng", bietDanh: "", tag: "BOY ♂️", anh: "images/hung.jpg" },
-        { ten: "Lê Gia Huy", bietDanh: "", tag: "BOY ♂️", anh: "images/giahuy.jpg" },
-        { ten: "Nguyễn Tuấn Huy", bietDanh: "", tag: "BOY ♂️", anh: "images/tuanhuy.jpg" },
-        { ten: "Vũ Chấn Huy", bietDanh: "", tag: "BOY ♂️", anh: "images/chanhuy.jpg" },
-        { ten: "Trần Nguyễn Minh Huyền", bietDanh: "", tag: "GIRL ♀️", anh: "images/huyen.jpg" },
-        { ten: "VŨ ANH KHÔI", bietDanh: "", tag: "BOY ♂️", anh: "images/khoi.jpg" },
-        { ten: "Phạm Ngọc Bằng Linh", bietDanh: "", tag: "GIRL ♀️", anh: "images/linh.jpg" },
-        { ten: "Doãn Hải Minh", bietDanh: "", tag: "BOY ♂️", anh: "images/haiminh.jpg" },
-        { ten: "Lê Quốc Minh", bietDanh: "", tag: "BOY ♂️", anh: "images/quocminh.jpg" },
-        { ten: "Phạm Châu Minh", bietDanh: "", tag: "BOY ♂️", anh: "images/chauminh.jpg" },
-        { ten: "Phan Tiến Minh", bietDanh: "", tag: "BOY ♂️", anh: "images/tienminh.jpg" },
-        { ten: "Lưu Trà My", bietDanh: "", tag: "GIRL ♀️", anh: "images/my.jpg" },
-        { ten: "Trần Thị Minh Ngọc", bietDanh: "", tag: "GIRL ♀️", anh: "images/ngoc.jpg" },
-        { ten: "Trần Khôi Nguyên", bietDanh: "", tag: "BOY ♂️", anh: "images/nguyen.jpg" },
-        { ten: "Hoàng Tiến Phát", bietDanh: "", tag: "BOY ♂️", anh: "images/phat.jpg" },
-        { ten: "Hoàng Hải Phong", bietDanh: "", tag: "BOY ♂️", anh: "images/phong.jpg" },
-        { ten: "Đào Đức Phúc", bietDanh: "", tag: "BOY ♂️", anh: "images/phuc.jpg" },
-        { ten: "Nguyễn Lê Anh Phương", bietDanh: "", tag: "GIRL ♀️", anh: "images/anhphuong.jpg" },
-        { ten: "Nguyễn Thế Quyết", bietDanh: "", tag: "BOY ♂️", anh: "images/quyet.jpg" },
-        { ten: "Chu Tuấn Sang", bietDanh: "", tag: "BOY ♂️", anh: "images/sang.jpg" },
-        { ten: "An Hải Kim Sơn", bietDanh: "", tag: "BOY ♂️", anh: "images/son.jpg" },
-        { ten: "Đỗ Minh Thực", bietDanh: "", tag: "BOY ♂️", anh: "images/thuc.jpg" },
-        { nickname: "", ten: "Trang Vân Thy", tag: "GIRL ♀️", anh: "images/thy.jpg" },
-        { ten: "Đỗ Ngọc Tuấn Tú", bietDanh: "", tag: "BOY ♂️", anh: "images/tu.jpg" },
-        { ten: "Phạm Mỹ Tuệ", bietDanh: "", tag: "GIRL ♀️", anh: "images/tue.jpg" },
-        { ten: "Nguyễn Đức Việt", bietDanh: "", tag: "BOY ♂️", anh: "images/viet.jpg" },
-        { ten: "Lê Quang Vinh", bietDanh: "", tag: "BOY ♂️", anh: "images/vinh.jpg" },
-        { ten: "Trần Quang Vinh", bietDanh: "", tag: "BOY ♂️", anh: "images/quangvinh.jpg" },
-        { ten: "Nguyễn Đức Công Vương", bietDanh: "", tag: "BOY ♂️", anh: "images/vuong.jpg" },
-        { ten: "Lê Ngọc Yến", bietDanh: "", tag: "GIRL ♀️", anh: "images/yen.jpg" }
+        { ten: "Vương Đình Tường An", dob: "26/10/2008", tag: "BOY ♂️", anh: "images/an.jpg", bietDanh: "albert" },
+        { ten: "Đặng Việt Anh", dob: "13/06/2008", tag: "BOY ♂️", anh: "" , bietDanh: "dva, vanh" },
+        { ten: "NGUYỄN TÀI TIẾN ANH", dob: "12/3/2008", tag: "BOY ♂️", anh: "" , bietDanh: "tien" },
+        { ten: "Nguyễn Thị Lan Anh", dob: "02/04/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "lanh" },
+        { ten: "Trần Ngọc Phương Anh", dob: "09/03/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "phanh" },
+        { ten: "Vương Minh Anh", dob: "06/03/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "ma, manh" },
+        { ten: "Nguyễn Lê Đức Bình", dob: "28/10/2008", tag: "BOY ♂️", anh: "" , bietDanh: "binh" },
+        { ten: "Trần Bảo Minh Châu", dob: "17/04/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "tẹt" },
+        { ten: "Nguyễn Hữu Tuấn Cường", dob: "13/03/2008", tag: "BOY ♂️", anh: "" , bietDanh: "cn" },
+        { ten: "Nguyễn Cao Anh Đức", dob: "11/06/2008", tag: "BOY ♂️", anh: "images/anhduc.jpg" , bietDanh: "Akita Art" },
+        { ten: "Nguyễn Việt Dũng", dob: "25/09/2008", tag: "BOY ♂️", anh: "" , bietDanh: "kDuy" },
+        { ten: "Nguyễn Đặng Thùy Dương", dob: "03/01/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "tduong" },
+        { ten: "Nguyễn Tiến Dương", dob: "18/05/2008", tag: "BOY ♂️", anh: "" , bietDanh: "Marky" },
+        { ten: "Phan Khánh Duy", dob: "09/10/2008", tag: "BOY ♂️", anh: "images/duy.jpg" , bietDanh: "bố Đức" },
+        { ten: "Đinh Quang Hiếu", dob: "04/01/2008", tag: "BOY ♂️", anh: "" , bietDanh: "hiropi" },
+        { ten: "Vũ Ngọc Hưng", dob: "21/03/2008", tag: "BOY ♂️", anh: "" , bietDanh: "Ỉn" },
+        { ten: "Lê Gia Huy", dob: "04/04/2008", tag: "BOY ♂️", anh: "" , bietDanh: "biển" },
+        { ten: "Nguyễn Tuấn Huy", dob: "09/08/2008", tag: "BOY ♂️", anh: "images/tuanhuy.jpg" , bietDanh: "HNT" },
+        { ten: "Vũ Chấn Huy", dob: "17/09/2008", tag: "BOY ♂️", anh: "" , bietDanh: "chấn, kurot" },
+        { ten: "Trần Nguyễn Minh Huyền", dob: "05/03/2008", tag: "GIRL ♀️", anh: "images/huyen.jpg" , bietDanh: "mihuein" },
+        { ten: "VŨ ANH KHÔI", dob: "04/03/2008", tag: "BOY ♂️", anh: "images/khoi.jpg" , bietDanh: "totozz" },
+        { ten: "Phạm Ngọc Bằng Linh", dob: "28/04/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "ngọc linh, bling bel" },
+        { ten: "Doãn Hải Minh", dob: "10/08/2008", tag: "BOY ♂️", anh: "", bietDanh: "lì"  },
+        { ten: "Lê Quốc Minh", dob: "17/05/2008", tag: "BOY ♂️", anh: "" , bietDanh: "A Minh Reyna" },
+        { ten: "Phạm Châu Minh", dob: "20/05/2008", tag: "BOY ♂️", anh: "images/chauminh.jpg" , bietDanh: "Knight" },
+        { ten: "Phan Tiến Minh", dob: "30/12/2008", tag: "BOY ♂️", anh: "images/tienminh.jpg", bietDanh: "Mimi"  },
+        { ten: "Lưu Trà My", dob: "02/10/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "tmii" },
+        { ten: "Trần Thị Minh Ngọc", dob: "24/06/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "" },
+        { ten: "Trần Khôi Nguyên", dob: "29/03/2008", tag: "BOY ♂️", anh: "images/nguyen.jpg" , bietDanh: "filmintomlife" },
+        { ten: "Hoàng Tiến Phát", dob: "11/06/2008", tag: "BOY ♂️", anh: "" , bietDanh: "PhátHoàng" },
+        { ten: "Hoàng Hải Phong", dob: "17/09/2008", tag: "BOY ♂️", anh: "images/phong.jpg" , bietDanh: "xôi" },
+        { ten: "Đào Đức Phúc", dob: "30/10/2008", tag: "BOY ♂️", anh: "images/phuc.jpg" , bietDanh: "dpw" },
+        { ten: "Nguyễn Lê Anh Phương", dob: "09/02/2008", tag: "GIRL ♀️", anh: "", bietDanh: "as, as phương, hellast"  },
+        { ten: "Nguyễn Thế Quyết", dob: "16/12/2008", tag: "BOY ♂️", anh: "images/quyet.jpg" , bietDanh: "TQ" },
+        { ten: "Chu Tuấn Sang", dob: "10/04/2008", tag: "BOY ♂️", anh: "images/sang.jpg" , bietDanh: "Sangchu" },
+        { ten: "An Hải Kim Sơn", dob: "28/07/2008", tag: "BOY ♂️", anh: "" , bietDanh: "ăn hại" },
+        { ten: "Đỗ Minh Thực", dob: "19/06/2008", tag: "BOY ♂️", anh: "images/thuc.jpg", bietDanh: "Lychee"  },
+        { dob: "28/11/2008", ten: "Trang Vân Thy", tag: "GIRL ♀️", anh: "" , bietDanh: "Bóng Pé" },
+        { ten: "Đỗ Ngọc Tuấn Tú", dob: "29/01/2008", tag: "BOY ♂️", anh: "images/tu.jpg", bietDanh: "Tumoi"  },
+        { ten: "Phạm Mỹ Tuệ", dob: "30/11/2008", tag: "GIRL ♀️", anh: "" , bietDanh: "alli" },
+        { ten: "Nguyễn Đức Việt", dob: "17/03/2008", tag: "BOY ♂️", anh: "images/viet.jpg" , bietDanh: "Mason Cato" },
+        { ten: "Lê Quang Vinh", dob: "30/03/2008", tag: "BOY ♂️", anh: "images/vinh.jpg" , bietDanh: "Lqv3003" },
+        { ten: "Trần Quang Vinh", dob: "03/04/2008", tag: "BOY ♂️", anh: "images/quangvinh.jpg" , bietDanh: "Vinhdzvcl<3" },
+        { ten: "Nguyễn Đức Công Vương", dob: "09/02/2008", tag: "BOY ♂️", anh: "", bietDanh: "square"  },
+        { ten: "Lê Ngọc Yến", dob: "12/10/2008", tag: "GIRL ♀️", anh: "images/yen.jpg", bietDanh: "Yến"  }
     ],
 
     // 2. Danh sách thầy cô
@@ -66,7 +66,7 @@ const k57Data = {
     { 
         ten: "Cô Nguyễn Thanh Loan", 
         monHoc: "Ngữ Văn", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Loan", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496165869321977937/image.png?ex=69e8e48c&is=69e7930c&hm=4181d49f20899ba26d36a38c01fe28855cd5bedf766d4fc39ad3da9dfe921ca0&=&format=webp&quality=lossless&width=591&height=886", 
         loiChuc: "Viết tiếp những chương thật đẹp cho cuộc đời mình, các em nhé!" 
     },
     { 
@@ -114,7 +114,7 @@ const k57Data = {
     { 
         ten: "Cô Hải Lý", 
         monHoc: "Sinh Học (Lớp 10)", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ly", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496169255492653147/image.png?ex=69ea3933&is=69e8e7b3&hm=ee7e72ce6830d155bd926ccd517d854f795a872036108c24326832cd5879eed1&=&format=webp&quality=lossless&width=886&height=886", 
         loiChuc: "Yêu thiên nhiên, yêu bản thân và không ngừng tiến hóa nhé!" 
     },
     { 
@@ -126,13 +126,13 @@ const k57Data = {
     { 
         ten: "Cô Linh", 
         monHoc: "Lịch Sử (Lớp 10)", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Linh", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496166229897908484/image.png?ex=69e8e4e2&is=69e79362&hm=24a9c25dc60e05fe942e5f25c90e26d012537d30fee597ca2417d27c63199b64&=&format=webp&quality=lossless", 
         loiChuc: "Trân trọng quá khứ để viết nên những trang sử mới hào hùng." 
     },
     { 
         ten: "Thầy Đặng Minh Xuân", 
         monHoc: "Lịch Sử (Lớp 10 & 11)", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Xuan", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496166021663424602/image.png?ex=69e8e4b0&is=69e79330&hm=6edd33b88be28675e35bff86bd6f020f7c9c14fe56d4f73041b5eb852d61f8bd&=&format=webp&quality=lossless&width=881&height=886", 
         loiChuc: "Hành trình vạn dặm bắt đầu từ những bước chân đầu tiên." 
     },
     { 
@@ -150,13 +150,13 @@ const k57Data = {
     { 
         ten: "Thầy Bùi Quang Vinh", 
         monHoc: "Tin Học (Lớp 11)", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Vinh", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496165726111662194/image.png?ex=69e8e46a&is=69e792ea&hm=87974157386f9f1ff359ef898b378280f6eaec14e2225ac102ec924ad151119e&=&format=webp&quality=lossless", 
         loiChuc: "Chúc các em luôn có những thuật toán tối ưu nhất cho cuộc đời mình." 
     },
     { 
         ten: "Thầy Nguyễn Minh Ngọc", 
         monHoc: "Thể Dục (Lớp 10 & 12)", 
-        anh: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ngoc", 
+        anh: "https://media.discordapp.net/attachments/893888180439367833/1496166582991458334/image.png?ex=69e8e536&is=69e793b6&hm=b2e1c3a6496d6026ce10d87a7b62d289eae578234920368c5e68e914da349f49&=&format=webp&quality=lossless&width=882&height=886", 
         loiChuc: "Thân khỏe thì tâm mới an, hãy luôn rèn luyện sức khỏe nhé!" 
     },
     { 
@@ -177,6 +177,15 @@ const k57Data = {
         video: [
             // Thêm link video (ví dụ: link youtube dạng embed hoặc link .mp4)
             "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        ]
+    },
+
+    anhDim: {
+        anh:[
+
+        ],
+        video: [
+
         ]
     }
 };

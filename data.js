@@ -204,6 +204,10 @@ const k57Data = {
 "images/thuvien/33.jpg",
 "images/thuvien/34.jpg",
 "images/thuvien/35.jpg",
+"images/thuvien/36.jpg",
+"images/thuvien/37.jpg",
+"images/thuvien/38.jpg",
+"images/thuvien/39.jpg",
 
         ],
         video: [
@@ -229,6 +233,13 @@ const k57Data = {
             "images/anhdim/16.jpg",
             "images/anhdim/18.jpg",
             "images/anhdim/19.jpg",
+            "images/anhdim/24.jpg",
+            "images/anhdim/25.jpg",
+            "images/anhdim/26.jpg",
+            "images/anhdim/27.jpg",
+            "images/anhdim/28.jpg",
+            "images/anhdim/29.jpg",
+            "images/anhdim/30.jpg",
         ],
         video: [
             "images/anhdim/10.mp4",

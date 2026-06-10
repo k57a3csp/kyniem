@@ -203,11 +203,10 @@ const k57Data = {
 "images/thuvien/32.jpg",
 "images/thuvien/33.jpg",
 "images/thuvien/34.jpg",
+"images/thuvien/35.jpg",
 
         ],
         video: [
-            // Thêm link video (ví dụ: link youtube dạng embed hoặc link .mp4)
-            "images/thuvien/1.mp4"
         ]
     },
 

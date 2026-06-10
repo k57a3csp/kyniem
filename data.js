@@ -207,7 +207,7 @@ const k57Data = {
         ],
         video: [
             // Thêm link video (ví dụ: link youtube dạng embed hoặc link .mp4)
-            "https://www.youtube.com/embed/dQw4w9WgXcQ"
+            "images/thuvien/1.mp4"
         ]
     },
 
